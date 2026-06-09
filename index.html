@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Pastora Ena Ortega! 🎂</title>
+    <meta name="description" content="Un homenaje especial de cumpleaños para la Pastora Ena Ortega, con todo el cariño de su hijo querido Andrés.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===================== RESET & BASE ===================== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #d4a843;
+            --gold-light: #f0d68a;
+            --gold-dark: #b8902a;
+            --rose: #c97b84;
+            --rose-deep: #a85b6a;
+            --rose-light: #f5d5d8;
+            --plum: #6b3a5e;
+            --plum-deep: #4a2040;
+            --cream: #fef9f0;
+            --cream-dark: #f5ebd8;
+            --white: #ffffff;
+            --text-dark: #2d1b2e;
+            --text-medium: #5c3d5e;
+            --text-light: #8a6b8c;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ===================== CANVAS CONFETTI ===================== */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(74, 32, 64, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+            padding: 0.6rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-light);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--gold-light); }
+
+        /* ===================== HERO SECTION ===================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: url('images/pastora.jpeg') center top / cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(74,32,64,0.82) 0%, rgba(107,58,94,0.78) 30%, rgba(168,91,106,0.75) 70%, rgba(201,123,132,0.8) 100%);
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: floatParticle 8s infinite ease-in-out;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-wreath {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            object-fit: cover;
+            border: 4px solid rgba(212,168,67,0.5);
+            box-shadow: 0 0 60px rgba(212,168,67,0.3), 0 0 120px rgba(201,123,132,0.2);
+            animation: gentlePulse 4s infinite ease-in-out;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { box-shadow: 0 0 60px rgba(212,168,67,0.3), 0 0 120px rgba(201,123,132,0.2); }
+            50% { box-shadow: 0 0 80px rgba(212,168,67,0.5), 0 0 150px rgba(201,123,132,0.3); }
+        }
+
+        .hero-subtitle {
+            font-family: 'Dancing Script', cursive;
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s 0.3s both;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--white);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s 0.5s both;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: var(--gold-light);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s 0.7s both;
+            text-shadow: 0 2px 20px rgba(212,168,67,0.4);
+        }
+
+        .hero-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s 0.9s both;
+            font-style: italic;
+        }
+
+        .hero-scroll-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s 1.1s both;
+            box-shadow: 0 8px 30px rgba(212,168,67,0.3);
+        }
+
+        .hero-scroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212,168,67,0.5);
+        }
+
+        .scroll-arrow {
+            display: inline-block;
+            animation: bounceArrow 2s infinite;
+        }
+
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===================== SECTION STYLES ===================== */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: 'Dancing Script', cursive;
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--plum-deep);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--rose), var(--gold));
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ===================== VIRTUDES ===================== */
+        .virtudes {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+        }
+
+        .virtudes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .virtud-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 20px rgba(107,58,94,0.06);
+            border: 1px solid rgba(212,168,67,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .virtud-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .virtud-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--rose), var(--plum));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .virtud-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(107,58,94,0.12);
+        }
+
+        .virtud-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .virtud-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: none;
+        }
+
+        .virtud-card:hover .virtud-icon {
+            animation: iconBounce 0.6s ease;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .virtud-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--plum);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .virtud-text {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        .virtud-verse {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(212,168,67,0.2);
+            line-height: 1.6;
+        }
+
+        /* ===================== GALERÍA DE FOTOS ===================== */
+        .galeria {
+            background: linear-gradient(135deg, var(--plum-deep) 0%, var(--plum) 50%, var(--rose-deep) 100%);
+            color: var(--white);
+        }
+
+        .galeria .section-title { color: var(--white); }
+        .galeria .section-label { color: var(--gold-light); }
+        .galeria .section-divider { background: linear-gradient(90deg, var(--gold-light), var(--rose-light), var(--gold-light)); }
+
+        .galeria-grid {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .galeria-item {
+            min-width: 100%;
+            width: 100%;
+            flex: 0 0 100%;
+            position: relative;
+            cursor: pointer;
+            background: #1a0a18;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(74,32,64,0.9) 0%, transparent 100%);
+            padding: 2rem 1.5rem 1.2rem;
+        }
+
+        .galeria-caption {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(74,32,64,0.7);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(212,168,67,0.4);
+            color: var(--white);
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(212,168,67,0.8);
+        }
+
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            border: 1px solid rgba(212,168,67,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--gold-light);
+            transform: scale(1.3);
+            box-shadow: 0 0 8px rgba(212,168,67,0.5);
+        }
+
+        .carousel-counter {
+            text-align: center;
+            margin-top: 0.8rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 2px;
+        }
+
+        .swipe-hint {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.65);
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: fadeInUp 1s 0.5s both;
+        }
+
+        .swipe-hand {
+            display: inline-block;
+            font-size: 1.4rem;
+            animation: swipeAnim 1.5s infinite ease-in-out;
+        }
+
+        @keyframes swipeAnim {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-12px); }
+        }
+
+        /* ===================== RECUERDOS ===================== */
+        .recuerdos {
+            background: var(--cream);
+            overflow: hidden;
+        }
+
+        .recuerdos-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .recuerdos-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--rose), var(--plum), var(--gold));
+        }
+
+        .recuerdo-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 2rem 2.5rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(107,58,94,0.08);
+            border: 1px solid rgba(212,168,67,0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .recuerdo-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .recuerdo-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--rose));
+            border: 3px solid var(--cream);
+            box-shadow: 0 0 0 3px var(--gold);
+        }
+
+        .recuerdo-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 30px rgba(107,58,94,0.14);
+        }
+
+        .recuerdo-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recuerdo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--plum);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .recuerdo-text {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ===================== AGRADECIMIENTO ===================== */
+        .agradecimiento {
+            background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+        }
+
+        .agradecimiento-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .agradecimiento-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            margin: 0 auto 3rem;
+            display: block;
+            box-shadow: 0 20px 60px rgba(107,58,94,0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .agradecimiento-img:hover {
+            transform: scale(1.02);
+        }
+
+        .agradecimiento-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            color: var(--text-dark);
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .agradecimiento-text strong {
+            color: var(--plum);
+        }
+
+        .agradecimiento-quote {
+            background: linear-gradient(135deg, rgba(107,58,94,0.05), rgba(212,168,67,0.08));
+            border-left: 4px solid var(--gold);
+            padding: 2rem 2.5rem;
+            border-radius: 0 16px 16px 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .agradecimiento-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--plum);
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .agradecimiento-quote cite {
+            display: block;
+            margin-top: 0.8rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gold-dark);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* ===================== MENSAJE ESPECIAL / DESEOS ===================== */
+        .deseos {
+            background: linear-gradient(135deg, var(--plum-deep) 0%, var(--plum) 40%, var(--rose-deep) 100%);
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .deseos::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/spiritual_sunrise.png') center/cover no-repeat;
+            opacity: 0.12;
+        }
+
+        .deseos .section-title { color: var(--white); }
+        .deseos .section-label { color: var(--gold-light); }
+        .deseos .section-divider { background: linear-gradient(90deg, var(--gold-light), var(--rose-light), var(--gold-light)); }
+
+        .deseos-content {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .deseos-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 2;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .deseos-list {
+            list-style: none;
+            text-align: left;
+            max-width: 550px;
+            margin: 2rem auto;
+        }
+
+        .deseos-list li {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(212,168,67,0.15);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .deseos-list li span.emoji {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* ===================== FIRMA ===================== */
+        .firma {
+            background: var(--cream);
+            text-align: center;
+            padding: 5rem 2rem 4rem;
+        }
+
+        .firma-heart {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+        }
+
+        .firma-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .firma-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--plum);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .firma-role {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold-dark);
+            font-style: italic;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--plum-deep);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+        }
+
+        footer span {
+            color: var(--gold-light);
+        }
+
+        /* ===================== YOUTUBE PLAYER ===================== */
+        #youtube-player-wrap {
+            position: fixed;
+            bottom: -200px;
+            left: -200px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .volume-indicator {
+            position: fixed;
+            bottom: 5rem;
+            right: 2rem;
+            background: rgba(74,32,64,0.85);
+            backdrop-filter: blur(12px);
+            color: var(--gold-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            z-index: 998;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+            pointer-events: none;
+            border: 1px solid rgba(212,168,67,0.3);
+        }
+
+        .volume-indicator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===================== LIGHTBOX ===================== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover { transform: rotate(90deg); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===================== FLOATING MUSIC BUTTON ===================== */
+        .music-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(212,168,67,0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(212,168,67,0.6);
+        }
+
+        .music-btn.playing { animation: musicPulse 1s infinite; }
+
+        @keyframes musicPulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(212,168,67,0.4); }
+            50% { box-shadow: 0 8px 25px rgba(212,168,67,0.7), 0 0 0 10px rgba(212,168,67,0.1); }
+        }
+
+        /* ===================== SCROLL ANIMATIONS ===================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; }
+            nav a { font-size: 0.72rem; letter-spacing: 1px; }
+
+            section { padding: 4rem 1.2rem; }
+
+            .hero-wreath { width: 200px; height: 200px; }
+
+            .virtudes-grid { grid-template-columns: 1fr; max-width: 400px; }
+
+            .galeria-grid { border-radius: 10px; max-width: 100%; }
+
+            .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
+            .carousel-btn.prev { left: 6px; }
+            .carousel-btn.next { right: 6px; }
+
+            .agradecimiento-quote { padding: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            nav ul { gap: 0.6rem; }
+            nav a { font-size: 0.65rem; letter-spacing: 0.5px; }
+
+            .hero-wreath { width: 160px; height: 160px; }
+            .hero-message { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#virtudes">Virtudes</a></li>
+            <li><a href="#galeria">Fotos</a></li>
+
+            <li><a href="#agradecimiento">Gracias</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <img src="images/pastora.jpeg" alt="Pastora Ena Ortega" class="hero-wreath">
+            <p class="hero-subtitle">En este día tan especial...</p>
+            <h1 class="hero-title">¡Feliz Cumpleaños!</h1>
+            <p class="hero-name">Pastora Ena Ortega</p>
+            <p class="hero-message">
+                "Porque de Él, y por Él, y para Él, son todas las cosas. A Él sea la gloria por los siglos."
+                — Romanos 11:36
+            </p>
+            <a href="#virtudes" class="hero-scroll-btn">
+                Descubrir Homenaje <span class="scroll-arrow">↓</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== VIRTUDES ==================== -->
+    <section class="virtudes" id="virtudes">
+        <div class="section-header">
+            <p class="section-label">Lo que la hace única</p>
+            <h2 class="section-title">Sus Hermosas Virtudes</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="virtudes-grid">
+            <div class="virtud-card" style="transition-delay: 0.1s;">
+                <span class="virtud-icon">🙏</span>
+                <h3 class="virtud-title">Fe Inquebrantable</h3>
+                <p class="virtud-text">Su confianza en Dios es un faro de luz que ilumina a todos los que la rodean. En cada momento difícil, su fe se mantiene firme como una roca.</p>
+                <p class="virtud-verse">«Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve.» — Hebreos 11:1</p>
+            </div>
+            <div class="virtud-card" style="transition-delay: 0.2s;">
+                <span class="virtud-icon">💝</span>
+                <h3 class="virtud-title">Amor Incondicional</h3>
+                <p class="virtud-text">Tiene un corazón que no conoce límites. Siempre dispuesta a dar sin esperar nada a cambio, brindando amor puro y genuino a cada persona que toca su vida.</p>
+                <p class="virtud-verse">«El amor es sufrido, es benigno; el amor no tiene envidia; el amor no es jactancioso, no se envanece.» — 1 Corintios 13:4</p>
+            </div>
+            <div class="virtud-card" style="transition-delay: 0.3s;">
+                <span class="virtud-icon">✨</span>
+                <h3 class="virtud-title">Sabiduría Divina</h3>
+                <p class="virtud-text">Sus palabras son como bálsamo para el alma. Cada consejo que da viene acompañado de la sabiduría que solo Dios puede dar a través de una sierva fiel.</p>
+                <p class="virtud-verse">«Si alguno de vosotros tiene falta de sabiduría, pídala a Dios, el cual da a todos abundantemente y sin reproche.» — Santiago 1:5</p>
+            </div>
+            <div class="virtud-card" style="transition-delay: 0.4s;">
+                <span class="virtud-icon">💪</span>
+                <h3 class="virtud-title">Fortaleza y Valentía</h3>
+                <p class="virtud-text">Una mujer valiente que enfrenta cada desafío con determinación. Su fortaleza inspira a otros a nunca rendirse y a confiar siempre en el plan de Dios.</p>
+                <p class="virtud-verse">«Todo lo puedo en Cristo que me fortalece.» — Filipenses 4:13</p>
+            </div>
+            <div class="virtud-card" style="transition-delay: 0.5s;">
+                <span class="virtud-icon">🌸</span>
+                <h3 class="virtud-title">Bondad y Ternura</h3>
+                <p class="virtud-text">Su bondad es como una brisa suave que reconforta. Con su ternura ha sanado corazones rotos y ha devuelto la esperanza a quienes más lo necesitan.</p>
+                <p class="virtud-verse">«Vestíos, pues, como escogidos de Dios, de entrañable misericordia, de benignidad, de humildad, de mansedumbre, de paciencia.» — Colosenses 3:12</p>
+            </div>
+            <div class="virtud-card" style="transition-delay: 0.6s;">
+                <span class="virtud-icon">🕊️</span>
+                <h3 class="virtud-title">Servidora Fiel</h3>
+                <p class="virtud-text">Siempre al servicio de Dios y de los demás. Su ministerio es un testimonio vivo del poder transformador de una vida entregada completamente al Señor.</p>
+                <p class="virtud-verse">«Bien, buen siervo y fiel; sobre poco has sido fiel, sobre mucho te pondré; entra en el gozo de tu señor.» — Mateo 25:21</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALERÍA DE FOTOS ==================== -->
+    <section class="galeria" id="galeria">
+        <div class="section-header">
+            <p class="section-label">Momentos que atesoramos</p>
+            <h2 class="section-title">Galería de Fotos</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="galeria-grid">
+            <div class="carousel-track" id="carousel-track">
+                <div class="galeria-item">
+                    <img src="images/pastora.jpeg" alt="Pastora Ena con su torta de cumpleaños">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">🎂 ¡Feliz Cumpleaños, Pastora Ena!</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.59.55 AM.jpeg" alt="Pastora Ena con regalos y torta">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">🎁 Rodeada de amor y bendiciones</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.55.09 AM.jpeg" alt="Selfie con la Pastora Ena">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">💛 Momentos juntos que atesoramos</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.22.41 AM.jpeg" alt="Pastora Ena celebrando">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">✨ Dios es el centro de todo</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.11.44 AM.jpeg" alt="Con sombreros junto al río">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">🌿 Caminando juntos en fe</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.08.41 AM.jpeg" alt="Sirviendo en comunidad">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">🙏 Sirviendo con amor al prójimo</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.07.57 AM.jpeg" alt="En la moto">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">😄 Siempre con alegría en el corazón</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.06.23 AM.jpeg" alt="Grupo de jóvenes">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">👨‍👩‍👧‍👦 La familia espiritual que formamos</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.04.03 AM.jpeg" alt="Compartiendo en grupo">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">🤗 Compartimos lo que somos</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/WhatsApp Image 2026-06-09 at 10.03.27 AM.jpeg" alt="En la iglesia">
+                    <div class="galeria-overlay">
+                        <p class="galeria-caption">🕊️ En la casa del Señor</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" id="carousel-prev">❮</button>
+            <button class="carousel-btn next" id="carousel-next">❯</button>
+        </div>
+        <div class="carousel-dots" id="carousel-dots"></div>
+        <div class="carousel-counter" id="carousel-counter"></div>
+        <div class="swipe-hint" id="swipe-hint">
+            <span class="swipe-hand">👆</span> Desliza para ver más fotos
+        </div>
+    </section>
+
+
+
+    <!-- ==================== AGRADECIMIENTO ==================== -->
+    <section class="agradecimiento" id="agradecimiento">
+        <div class="section-header">
+            <p class="section-label">Desde lo más profundo del corazón</p>
+            <h2 class="section-title">Gracias, Pastora Ena</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="agradecimiento-content">
+            <img src="images/WhatsApp Image 2026-06-09 at 10.55.09 AM.jpeg" alt="Andrés con la Pastora Ena" class="agradecimiento-img reveal">
+            <p class="agradecimiento-text reveal">
+                Querida <strong>Pastora Ena</strong>, no existen palabras suficientes en este mundo para expresar todo lo que usted significa para mí. Usted ha sido mi <strong>ayuda incondicional</strong>, esa mano extendida que nunca se retira, ese corazón que siempre tiene espacio para dar más amor.
+            </p>
+            <p class="agradecimiento-text reveal">
+                Gracias por cada oración elevada al cielo por mí, por cada palabra de aliento en los momentos difíciles, por cada sonrisa que me ha regalado y por ser ese <strong>pilar de fe</strong> que sostiene a tantas personas. Usted no solo predica la Palabra de Dios, usted la <strong>vive</strong> con cada acción, con cada gesto de amor.
+            </p>
+            <div class="agradecimiento-quote reveal">
+                <p>"La mujer que teme a Jehová, ésa será alabada. Dadle del fruto de sus manos, y alábenla en las puertas sus hechos."</p>
+                <cite>— Proverbios 31:30-31</cite>
+            </div>
+            <p class="agradecimiento-text reveal">
+                Usted es esa mujer virtuosa de la que habla la Biblia. Su vida entera ha sido un acto de amor y servicio. <strong>Gracias por ser mi guía, mi apoyo, mi pastora y mi madre espiritual.</strong> Lo que usted ha sembrado en mi vida dará fruto por la eternidad. La aprecio más de lo que las palabras pueden decir. 💛
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- ==================== FIRMA ==================== -->
+    <section class="firma">
+        <div class="firma-heart">❤️</div>
+        <p class="firma-text">Con todo mi amor y agradecimiento,</p>
+        <p class="firma-text">Atentamente,</p>
+        <h2 class="firma-name">Andrés</h2>
+        <p class="firma-role">Su hijo querido</p>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>Hecho con mucho ❤️ para la <span>Pastora Ena Ortega</span> · ¡Feliz Cumpleaños! 🎂</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">✕</span>
+        <img src="" alt="Foto ampliada" id="lightbox-img">
+    </div>
+
+    <!-- YouTube Player (hidden) -->
+    <div id="youtube-player-wrap">
+        <div id="yt-player"></div>
+    </div>
+
+    <!-- Volume Indicator -->
+    <div class="volume-indicator" id="volume-indicator">🔊 Vol: 40%</div>
+
+    <!-- Music Play Button -->
+    <button class="music-btn" id="music-btn" title="Reproducir música">🎵</button>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ==================== CONFETTI ====================
+        (function() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            let confettiPieces = [];
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const colors = ['#d4a843', '#c97b84', '#f0d68a', '#a85b6a', '#6b3a5e', '#f5d5d8', '#ff69b4', '#ffd700'];
+
+            class Confetti {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * -canvas.height;
+                    this.w = Math.random() * 12 + 6;
+                    this.h = Math.random() * 8 + 4;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.speedY = Math.random() * 3 + 1.5;
+                    this.speedX = Math.random() * 2 - 1;
+                    this.rotation = Math.random() * 360;
+                    this.rotationSpeed = Math.random() * 8 - 4;
+                    this.opacity = Math.random() * 0.7 + 0.3;
+                    this.shape = Math.floor(Math.random() * 3);
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX + Math.sin(this.y * 0.01) * 0.5;
+                    this.rotation += this.rotationSpeed;
+                    if (this.y > canvas.height + 20) this.reset();
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate((this.rotation * Math.PI) / 180);
+                    ctx.globalAlpha = this.opacity;
+                    ctx.fillStyle = this.color;
+                    if (this.shape === 0) {
+                        ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
+                    } else if (this.shape === 1) {
+                        ctx.beginPath();
+                        ctx.arc(0, 0, this.w / 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else {
+                        ctx.beginPath();
+                        for (let i = 0; i < 5; i++) {
+                            const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+                            ctx.lineTo(Math.cos(angle) * this.w / 2, Math.sin(angle) * this.w / 2);
+                        }
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                    ctx.restore();
+                }
+            }
+
+            for (let i = 0; i < 100; i++) {
+                const c = new Confetti();
+                c.y = Math.random() * canvas.height;
+                confettiPieces.push(c);
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                confettiPieces.forEach(c => { c.update(); c.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            setTimeout(() => {
+                const interval = setInterval(() => {
+                    if (confettiPieces.length > 20) confettiPieces.splice(0, 5);
+                    else clearInterval(interval);
+                }, 200);
+            }, 8000);
+        })();
+
+        // ==================== PARTICLES ====================
+        (function() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 6 + 2;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.background = `hsla(${Math.random() * 60 + 30}, 80%, 70%, 0.6)`;
+                p.style.animationDelay = Math.random() * 8 + 's';
+                p.style.animationDuration = (Math.random() * 6 + 6) + 's';
+                container.appendChild(p);
+            }
+        })();
+
+        // ==================== NAVBAR SCROLL ====================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // ==================== SCROLL REVEAL ====================
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.virtud-card, .reveal').forEach(el => observer.observe(el));
+
+        // ==================== LIGHTBOX ====================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.galeria-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+        // ==================== CAROUSEL ====================
+        (function() {
+            const track = document.getElementById('carousel-track');
+            const items = track.querySelectorAll('.galeria-item');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const dotsContainer = document.getElementById('carousel-dots');
+            const counter = document.getElementById('carousel-counter');
+            let current = 0;
+            const total = items.length;
+            let autoplayInterval;
+
+            // Create dots
+            items.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            function updateCounter() {
+                counter.textContent = `${current + 1} / ${total}`;
+            }
+
+            function goTo(index) {
+                current = ((index % total) + total) % total;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+                updateCounter();
+            }
+
+            prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+            nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
+
+            // Swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) goTo(current + 1);
+                    else goTo(current - 1);
+                    resetAutoplay();
+                }
+            });
+
+            // Auto-advance every 5 seconds
+            function startAutoplay() {
+                autoplayInterval = setInterval(() => goTo(current + 1), 5000);
+            }
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            }
+            startAutoplay();
+            updateCounter();
+        })();
+
+        // ==================== YOUTUBE MUSIC WITH DYNAMIC VOLUME ====================
+        let ytPlayer = null;
+        let musicStarted = false;
+        let currentVolume = 100;
+        let volumeTimeout = null;
+
+        // Volume levels per section
+        const sectionVolumes = {
+            'inicio': 100,
+            'virtudes': 18,
+            'galeria': 55,
+            'agradecimiento': 18,
+            'firma-section': 35
+        };
+
+        function onYouTubeIframeReady() {
+            ytPlayer = new YT.Player('yt-player', {
+                height: '1',
+                width: '1',
+                videoId: 'auYDztjW34E',
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    playlist: 'auYDztjW34E',
+                    controls: 0,
+                    showinfo: 0,
+                    modestbranding: 1,
+                    rel: 0
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // Use the correct API callback name
+        window.onYouTubeIframeAPIReady = onYouTubeIframeReady;
+
+        function startAudioOnInteraction() {
+            if (!musicStarted && ytPlayer && typeof ytPlayer.playVideo === 'function') {
+                ytPlayer.playVideo();
+                // Se actualizará 'musicStarted' solo cuando realmente empiece a sonar (onPlayerStateChange)
+            }
+        }
+
+        function onPlayerReady(event) {
+            event.target.setVolume(100);
+
+            // Escuchar cualquier toque o deslizamiento hasta que la música logre iniciar
+            document.addEventListener('click', startAudioOnInteraction);
+            document.addEventListener('touchstart', startAudioOnInteraction, { passive: true });
+            document.addEventListener('scroll', startAudioOnInteraction, { passive: true });
+            
+            // Intentar inmediato (algunos navegadores lo permiten)
+            try { ytPlayer.playVideo(); } catch(e) {}
+        }
+
+        function onPlayerStateChange(event) {
+            // Loop when ended
+            if (event.data === YT.PlayerState.ENDED) {
+                ytPlayer.playVideo();
+            }
+            // Update button state
+            const btn = document.getElementById('music-btn');
+            if (event.data === YT.PlayerState.PLAYING) {
+                btn.classList.add('playing');
+                btn.textContent = '🎶';
+                musicStarted = true;
+                
+                // Ya inició exitosamente, podemos remover los listeners de interacción inicial
+                document.removeEventListener('click', startAudioOnInteraction);
+                document.removeEventListener('touchstart', startAudioOnInteraction);
+                document.removeEventListener('scroll', startAudioOnInteraction);
+            }
+        }
+
+        // Music button toggle
+        document.getElementById('music-btn').addEventListener('click', function() {
+            if (!ytPlayer) return;
+            if (musicStarted && ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+                ytPlayer.pauseVideo();
+                this.classList.remove('playing');
+                this.textContent = '🎵';
+                musicStarted = false;
+            } else {
+                ytPlayer.playVideo();
+                this.classList.add('playing');
+                this.textContent = '🎶';
+                musicStarted = true;
+            }
+        });
+
+        // Smooth volume transition
+        function smoothVolume(targetVol) {
+            if (!ytPlayer || !musicStarted) return;
+            if (Math.abs(currentVolume - targetVol) < 2) return;
+
+            const step = targetVol > currentVolume ? 2 : -2;
+            const volumeInterval = setInterval(() => {
+                currentVolume += step;
+                if ((step > 0 && currentVolume >= targetVol) || (step < 0 && currentVolume <= targetVol)) {
+                    currentVolume = targetVol;
+                    clearInterval(volumeInterval);
+                }
+                try { ytPlayer.setVolume(currentVolume); } catch(e) {}
+            }, 50);
+
+            // Show volume indicator
+            showVolumeIndicator(targetVol);
+        }
+
+        function showVolumeIndicator(vol) {
+            const indicator = document.getElementById('volume-indicator');
+            let icon = '🔈';
+            if (vol > 40) icon = '🔊';
+            else if (vol > 15) icon = '🔉';
+            indicator.textContent = `${icon} Vol: ${vol}%`;
+            indicator.classList.add('show');
+            clearTimeout(volumeTimeout);
+            volumeTimeout = setTimeout(() => indicator.classList.remove('show'), 2000);
+        }
+
+        // Observe sections for volume change
+        const volumeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && musicStarted) {
+                    const id = entry.target.id || entry.target.dataset.section;
+                    const targetVol = sectionVolumes[id];
+                    if (targetVol !== undefined) {
+                        smoothVolume(targetVol);
+                    }
+                }
+            });
+        }, { threshold: 0.4 });
+
+        // Observe each section
+        document.querySelectorAll('#inicio, #virtudes, #galeria, #agradecimiento').forEach(section => {
+            volumeObserver.observe(section);
+        });
+        // Add data-section to firma since it doesn't have an id matching sectionVolumes
+        const firmaSection = document.querySelector('.firma');
+        if (firmaSection) {
+            firmaSection.id = 'firma-section';
+            volumeObserver.observe(firmaSection);
+        }
+
+        // ==================== SMOOTH SCROLL ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ==================== TYPING EFFECT ====================
+        (function() {
+            const title = document.querySelector('.hero-name');
+            const text = title.textContent;
+            title.textContent = '';
+            title.style.borderRight = '2px solid var(--gold-light)';
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 80);
+                } else {
+                    setTimeout(() => { title.style.borderRight = 'none'; }, 1500);
+                }
+            }
+            setTimeout(type, 1200);
+        })();
+    </script>
+</body>
+</html>
+
