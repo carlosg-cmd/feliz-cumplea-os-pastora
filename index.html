@@ -858,33 +858,49 @@
         .music-btn {
             position: fixed;
             bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 30px;
             background: linear-gradient(135deg, var(--gold), var(--gold-dark));
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            padding: 12px 24px;
             cursor: pointer;
             z-index: 999;
             box-shadow: 0 8px 25px rgba(212,168,67,0.4);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+            animation: pulseAttention 2s infinite;
+            white-space: nowrap;
         }
 
-        .music-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(212,168,67,0.6);
+        @keyframes pulseAttention {
+            0% { box-shadow: 0 0 0 0 rgba(212,168,67, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212,168,67, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212,168,67, 0); }
         }
 
-        .music-btn.playing { animation: musicPulse 1s infinite; }
+        .music-btn.playing { 
+            animation: none;
+            left: auto;
+            right: 2rem;
+            bottom: 2rem;
+            transform: none;
+            width: 56px;
+            height: 56px;
+            padding: 0;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
 
-        @keyframes musicPulse {
-            0%, 100% { box-shadow: 0 8px 25px rgba(212,168,67,0.4); }
-            50% { box-shadow: 0 8px 25px rgba(212,168,67,0.7), 0 0 0 10px rgba(212,168,67,0.1); }
+        .music-btn.playing span {
+            display: none;
         }
 
         /* ===================== SCROLL ANIMATIONS ===================== */
@@ -1148,7 +1164,7 @@
     <div class="volume-indicator" id="volume-indicator">🔊 Vol: 40%</div>
 
     <!-- Music Play Button -->
-    <button class="music-btn" id="music-btn" title="Reproducir música">🎵</button>
+    <button class="music-btn" id="music-btn" title="Reproducir música">🎵 <span>Presiona para activar música</span></button>
 
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -1422,7 +1438,7 @@
             const btn = document.getElementById('music-btn');
             if (event.data === YT.PlayerState.PLAYING) {
                 btn.classList.add('playing');
-                btn.textContent = '🎶';
+                btn.innerHTML = '🎶';
                 musicStarted = true;
                 
                 // Ya inició exitosamente, podemos remover los listeners de interacción inicial
@@ -1438,12 +1454,12 @@
             if (musicStarted && ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
                 ytPlayer.pauseVideo();
                 this.classList.remove('playing');
-                this.textContent = '🎵';
+                this.innerHTML = '🎵 <span>Presiona para activar música</span>';
                 musicStarted = false;
             } else {
                 ytPlayer.playVideo();
                 this.classList.add('playing');
-                this.textContent = '🎶';
+                this.innerHTML = '🎶';
                 musicStarted = true;
             }
         });
